@@ -7,6 +7,7 @@ module.exports = {
   extends: ["prettier"],
   parserOptions: {
     ecmaVersion: 13,
+    sourceType: "module"
   },
   rules: {},
 };

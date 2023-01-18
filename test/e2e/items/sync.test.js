@@ -1,4 +1,6 @@
 // sync.test.js
+import bootstrapTest from "../bootstrap.test.js";
+const {accessToken, oneDrive, expect, errorHandler} = bootstrapTest
 
 describe("Sync Delta", function () {
   it("should retrieve recent sync data", function (done) {

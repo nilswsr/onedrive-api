@@ -1,7 +1,6 @@
 //listChildren.test.js
-
-const { expect } = require("chai");
-const faker = require("faker");
+import bootstrapTest from "../bootstrap.test.js";
+const {accessToken, oneDrive, expect, faker, errorHandler} = bootstrapTest
 
 describe("listChildren", function () {
   let folderName1 = "test-" + faker.random.word(),

@@ -1,4 +1,6 @@
 // customEndpoint.test.js
+import bootstrapTest from "../bootstrap.test.js";
+const {accessToken, oneDrive, expect, errorHandler} = bootstrapTest
 
 describe("CustomEndpoint", function () {
   it("should retrieve recent items by custom endpoint GET request", function (done) {

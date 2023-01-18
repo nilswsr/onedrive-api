@@ -1,22 +1,22 @@
-const oneDrive = require("../../lib/index"),
-  mocha = require("mocha"),
-  chai = require("chai"),
-  credentials = require("./credentials");
-
-//set globals
-global.accessToken = credentials.accessToken;
-global.oneDrive = oneDrive;
-global.mocha = mocha;
-global.expect = chai.expect;
+import oneDrive from "../../lib/index.js"
+import mocha from "mocha"
+import chai from "chai"
+import credentials from "./credentials.js";
+import faker from "faker"
 
 // global errorHandler that ensures that whole error is logged, not just [object Object]
-global.errorHandler = function (done) {
+const errorHandler = function (done) {
   return function (err) {
     console.error(err);
     done(err);
   };
 };
 
-process.nextTick(() => {
-  run();
-});
+export default {
+  accessToken: credentials.accessToken,
+  oneDrive: oneDrive,
+  mocha: mocha,
+  expect: chai.expect,
+  faker: faker,
+  errorHandler: errorHandler
+}

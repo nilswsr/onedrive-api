@@ -1,7 +1,11 @@
 // uploadSimple.test.js
+import bootstrapTest from "../bootstrap.test.js";
+const {accessToken, oneDrive, expect, faker, errorHandler} = bootstrapTest
+import stringStream from "string-to-stream"
 
-const faker = require("faker");
-const stringStream = require("string-to-stream");
+import fs from "fs"
+import path from "path"
+import { fileURLToPath } from 'url';
 
 describe("uploadSession", function () {
   const fileValidated = (item, equalSize = undefined) => {
@@ -62,9 +66,8 @@ describe("uploadSession", function () {
       this.timeout(60 * 1000);
       const filename = "test-uploadSession-" + faker.random.word();
       // 10MB
-      const fs = require("fs");
-      const path = require("path");
-      const exampleFilePath = path.join(__dirname, "../../example-data/10MB_file.txt");
+      const exampleDirName = path.dirname(fileURLToPath(import.meta.url))
+      const exampleFilePath = path.join(exampleDirName, "../../example-data/10MB_file.txt");
       const readableStream = fs.createReadStream(exampleFilePath);
       const fsStat = fs.statSync(exampleFilePath);
       const processReport = (process) =>

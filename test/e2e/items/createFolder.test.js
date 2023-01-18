@@ -1,5 +1,6 @@
 // createFolder.test.js
-const faker = require("faker");
+import bootstrapTest from "../bootstrap.test.js";
+const {accessToken, oneDrive, expect, faker, errorHandler} = bootstrapTest
 
 describe("createFolder", function () {
   let createdFolder;

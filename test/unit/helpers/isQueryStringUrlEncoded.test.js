@@ -1,12 +1,11 @@
-const chai = require("chai");
+import chai from "chai"
 const expect = chai.expect;
-const isQueryStringUrlEncoded = require("../../../lib/helpers/isQueryStringUrlEncoded");
+import {isQueryStringUrlEncoded} from "../../../lib/helpers/isQueryStringUrlEncoded.js";
 
 describe("isQueryStringUrlEncoded", () => {
   it("Should return true for valid query strings", () => {
     const validStrings = ["foo", "?bar=2", "?bar%20foo"];
     validStrings.forEach((validString) => {
-      console.log(validString);
       expect(isQueryStringUrlEncoded(validString)).to.be.true;
     });
   });

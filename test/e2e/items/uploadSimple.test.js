@@ -1,7 +1,7 @@
 // uploadSimple.test.js
-
-const faker = require("faker"),
-  stringStream = require("string-to-stream");
+import bootstrapTest from "../bootstrap.test.js"
+const {accessToken, oneDrive, expect, faker, errorHandler} = bootstrapTest
+import stringStream from "string-to-stream"
 
 describe("uploadSimple", function () {
   let filename, readableStream, fileContent, createdFile, folderName, createdFolder, createdFile2;
