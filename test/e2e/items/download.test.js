@@ -43,6 +43,7 @@ describe("download", function () {
       itemId: createdFile.id,
     });
 
+    console.log("===================", fileStream, typeof fileStream)
     fileStream.on("data", function (data) {
       partialString += data.toString();
     });
